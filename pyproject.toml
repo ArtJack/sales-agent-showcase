@@ -1,0 +1,15 @@
+[project]
+name = "sales-agent-showcase"
+version = "0.1.0"
+description = "Clean-room showcase of a multi-marketplace resale automation system (sanitized)."
+requires-python = ">=3.10"
+# No runtime dependencies — the showcase is pure standard library on purpose, so
+# `python demo.py` runs anywhere with zero install.
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+addopts = ["-q"]
+testpaths = ["tests"]

@@ -1,0 +1,64 @@
+
+======================================================================
+PASS 1 — fresh inventory
+======================================================================
+
+SKU-1001  Northbound Denim Trucker Jacket  →  3 live · 0 skipped · fully listed
+    marketplace-alpha    ✓ marketplace-alpha-11d002e110  (1 attempt, 157ms)
+    marketplace-beta     ✓ marketplace-beta-6c8a58a250  (1 attempt, 36ms)
+    marketplace-gamma    ✓ marketplace-gamma-776e63f773  (1 attempt, 84ms)
+
+SKU-1002  Marlowe Leather Crossbody Bag  →  3 live · 0 skipped · fully listed
+    marketplace-alpha    ✓ marketplace-alpha-131d3f72ca  (2 attempts, 46ms)
+    marketplace-beta     ✓ marketplace-beta-fb55be4eb5  (1 attempt, 142ms)
+    marketplace-gamma    ✓ marketplace-gamma-bfb20cd96a  (1 attempt, 188ms)
+
+SKU-1003  Ashford Wool Overcoat  →  3 live · 0 skipped · fully listed
+    marketplace-alpha    ✓ marketplace-alpha-5a84a0b1be  (1 attempt, 82ms)
+    marketplace-beta     ✓ marketplace-beta-d5f348b1b1  (1 attempt, 108ms)
+    marketplace-gamma    ✓ marketplace-gamma-d0a9afc3b9  (1 attempt, 175ms)
+
+SKU-1004  Harbor & Pine Knit Sweater  →  3 live · 0 skipped · fully listed
+    marketplace-alpha    ✓ marketplace-alpha-ca52e7e010  (1 attempt, 67ms)
+    marketplace-beta     ✓ marketplace-beta-366a08876b  (1 attempt, 61ms)
+    marketplace-gamma    ✓ marketplace-gamma-73d0bc1d0c  (1 attempt, 92ms)
+
+SKU-1005  Velocity Running Sneakers  →  2 live · 0 skipped · 1 failed
+    marketplace-alpha    ✓ marketplace-alpha-c480c95a53  (1 attempt, 124ms)
+    marketplace-beta     ✓ marketplace-beta-00bfec9963  (1 attempt, 30ms)
+    marketplace-gamma    ✗ permanent: marketplace-gamma: rejected SKU-1005 (failed listing validation)
+
+======================================================================
+PASS 2 — idempotent re-run (everything already live is skipped)
+======================================================================
+
+SKU-1001  Northbound Denim Trucker Jacket  →  0 live · 3 skipped · fully listed
+    marketplace-alpha    · already live — skipped
+    marketplace-beta     · already live — skipped
+    marketplace-gamma    · already live — skipped
+
+SKU-1002  Marlowe Leather Crossbody Bag  →  0 live · 3 skipped · fully listed
+    marketplace-alpha    · already live — skipped
+    marketplace-beta     · already live — skipped
+    marketplace-gamma    · already live — skipped
+
+SKU-1003  Ashford Wool Overcoat  →  0 live · 3 skipped · fully listed
+    marketplace-alpha    · already live — skipped
+    marketplace-beta     · already live — skipped
+    marketplace-gamma    · already live — skipped
+
+SKU-1004  Harbor & Pine Knit Sweater  →  0 live · 3 skipped · fully listed
+    marketplace-alpha    · already live — skipped
+    marketplace-beta     · already live — skipped
+    marketplace-gamma    · already live — skipped
+
+SKU-1005  Velocity Running Sneakers  →  0 live · 2 skipped · 1 failed
+    marketplace-alpha    · already live — skipped
+    marketplace-beta     · already live — skipped
+    marketplace-gamma    ✗ permanent: marketplace-gamma: rejected SKU-1005 (failed listing validation)
+
+Notes:
+  • marketplace-alpha hit a transient error on SKU-1002 and retried to success.
+  • marketplace-gamma permanently rejected SKU-1005 — reported, not retried,
+    and never marked live, so pass 2 tries it again.
+  • Everything that succeeded in pass 1 is skipped in pass 2 (no double-posting).

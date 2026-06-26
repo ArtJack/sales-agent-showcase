@@ -1,0 +1,15 @@
+SANITIZED SHOWCASE — NOT THE PRODUCTION SYSTEM
+==============================================
+
+This repository is a clean-room re-implementation of the *architecture* of a
+multi-marketplace resale automation system built for a client (an anonymous,
+US-based resale business). It exists only to demonstrate the engineering.
+
+By design, this repo does NOT contain:
+  • The production code — that lives in a separate, private repository.
+  • Any real marketplace integration — those adapters are proprietary client
+    work and stay private.
+  • Any credentials, cookies, browser sessions, endpoints, SKUs, or client data.
+
+Every marketplace adapter here is a fake (`FakeMarketplaceClient`) that performs
+no network I/O and holds no secrets. All inventory data is synthetic.

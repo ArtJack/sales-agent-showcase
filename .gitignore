@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# Tooling caches
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Secrets / data — must never be committed to a public repo
+.env
+.env.*
+*.db
+*.sqlite3
+data/
+
+# Project-specific scan denylist (real client/marketplace tokens stay local)
+.scan-denylist
+
+# OS
+.DS_Store

@@ -1,0 +1,67 @@
+[
+  {
+    "sku": "SKU-1001",
+    "title": "Denim Trucker Jacket",
+    "brand": "Northbound",
+    "category": "Outerwear",
+    "condition": "good",
+    "price_usd": 68.0,
+    "cost_usd": 22.0,
+    "size": "M",
+    "color": "Indigo",
+    "photos": ["1001-a.jpg", "1001-b.jpg"],
+    "notes": "Lightly worn, no flaws. Classic mid-wash."
+  },
+  {
+    "sku": "SKU-1002",
+    "title": "Leather Crossbody Bag",
+    "brand": "Marlowe",
+    "category": "Bags",
+    "condition": "like_new",
+    "price_usd": 120.0,
+    "cost_usd": 45.0,
+    "size": null,
+    "color": "Tan",
+    "photos": ["1002-a.jpg"],
+    "notes": "Barely used, dust bag included."
+  },
+  {
+    "sku": "SKU-1003",
+    "title": "Wool Overcoat",
+    "brand": "Ashford",
+    "category": "Outerwear",
+    "condition": "good",
+    "price_usd": 95.0,
+    "cost_usd": 30.0,
+    "size": "L",
+    "color": "Charcoal",
+    "photos": ["1003-a.jpg"],
+    "notes": ""
+  },
+  {
+    "sku": "SKU-1004",
+    "title": "Knit Sweater",
+    "brand": "Harbor & Pine",
+    "category": "Tops",
+    "condition": "good",
+    "price_usd": 34.0,
+    "cost_usd": 9.0,
+    "size": "S",
+    "color": "Cream",
+    "photos": [],
+    "notes": "Cozy cotton blend."
+  },
+  {
+    "sku": "SKU-1005",
+    "title": "Running Sneakers",
+    "brand": "Velocity",
+    "category": "Shoes",
+    "condition": "fair",
+    "price_usd": 40.0,
+    "cost_usd": 12.0,
+    "size": "10",
+    "color": "Black/White",
+    "photos": ["1005-a.jpg"],
+    "notes": "Some sole wear; plenty of life left."
+  }
+]
